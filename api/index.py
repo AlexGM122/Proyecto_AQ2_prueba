@@ -5,6 +5,9 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, OperationFailure
 from datetime import datetime, timezone, timedelta
 
+# Prueba
+print(f"DEBUG: Registrando temperatura con hora: {datetime.now(tz_utc_plus_1)}")
+
 # La inicialización de la app de Flask debe ocurrir antes de la conexión a DB.
 app = Flask(__name__)
 
@@ -69,7 +72,7 @@ def ingestar_temperatura():
     
     registro = {
         "temperatura": temperatura_float,
-        "timestamp": datetime.now(tz_utc_plus_1),
+        "timestamp": datetime.now(tz_utc_plus_2),
         "device_ip": request.remote_addr # IP pública del dispositivo/red
     }
 
